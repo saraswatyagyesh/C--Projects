@@ -13,9 +13,7 @@ SOCKET::SimpleSocket::SimpleSocket(int doimain, int service, int protocol, int p
     sock = socket(doimain, service, protocol);
     test_connection(sock);
 
-    // Establish network connection
-    connection = connect_to_network(sock, address);
-    test_connection(connection);
+
 }
 
 void SOCKET::SimpleSocket::test_connection(int item_to_test)
@@ -40,4 +38,9 @@ int SOCKET::SimpleSocket::get_sock()
 int SOCKET::SimpleSocket::get_connection()
 {
     return connection;
+}
+
+void SOCKET::SimpleSocket::set_connection(int con)
+{
+    connection = con;
 }

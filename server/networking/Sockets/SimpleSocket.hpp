@@ -12,9 +12,9 @@ namespace SOCKET
     class SimpleSocket 
     {
         private: 
-            struct socaddr_in address;
-            int sock;
-            int connection;
+        int sock;
+        struct sockaddr_in address;
+            // int connection;
 
         public: 
             
@@ -23,10 +23,10 @@ namespace SOCKET
             void test_connection(int);
 
             // Getters
-            struct sockaddr_in get_address();
             int get_sock();
-            int get_connection();
-            void set_connection(int con);
+            struct sockaddr_in get_address();
+            // int get_connection();
+            // void set_connection(int con);
     };
 }
 

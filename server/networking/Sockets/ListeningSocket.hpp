@@ -4,7 +4,7 @@
 #include<stdio.h>
 #include"BindingSocket.hpp"
 
-namespace SERVER 
+namespace SOCKET
 {
     class ListeningSocket : public BindingSocket
     {

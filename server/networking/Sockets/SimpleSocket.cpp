@@ -5,9 +5,9 @@
 SOCKET::SimpleSocket::SimpleSocket(int doimain, int service, int protocol, int port, u_long interface)
 {
     // Define adress structure
-    adress.sin_family = domain;
-    addess.sin_port = htons(port);
-    addess.sin_addr.s_addr = htonl(interface);
+    address.sin_family = domain;
+    address.sin_port = htons(port);
+    address.sin_addr.s_addr = htonl(interface);
 
     // Establish a socket
     sock = socket(doimain, service, protocol);
@@ -20,12 +20,12 @@ void SOCKET::SimpleSocket::test_connection(int item_to_test)
 {
     if (item_to_test < 0)
     {
-        errir("Failed to connect....");
+        error("Failed to connect....");
         exit(EXIT_FAILURE);
     }
 }
 
-struct sockadddr_in SOCKET::SimpleSocket::get_address()
+struct sockaddr_in SOCKET::SimpleSocket::get_address()
 {
     return address;
 }

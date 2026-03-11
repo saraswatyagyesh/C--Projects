@@ -9,5 +9,15 @@ SOCKET::ListeningSocket::ListeningSocket(int domain, int service, int protocol, 
 
 void SOCKET::ListeningSocket::start_listening()
 {
-    listening = listen(get_connection(), backlog);
+    listening = listen(get_sock(), backlog);
+}
+
+int SOCKET::ListeningSocket::get_listening()
+{
+    return listening;
+}
+
+int SOCKET::ListeningSocket::get_backlog()
+{
+    return backlog;
 }
